@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>���ܷŴ�</title>
+    <link rel="stylesheet" type="text/css" href="pz-zoom.css" />
+    <script type="text/javascript" src="jq.js"></script>
+    <script type="text/javascript" src="pz-zoom.js"></script>
+    <style type="text/css">
+      body,
+      div,
+      dl,
+      dt,
+      dd,
+      ul,
+      ol,
+      li,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      form,
+      fieldset,
+      input,
+      textarea,
+      p,
+      blockquote,
+      th,
+      td {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      fieldset,
+      img {
+        border: 0;
+      }
+      address,
+      caption,
+      cite,
+      code,
+      dfn,
+      em,
+      strong,
+      th,
+      var {
+        font-style: normal;
+        font-weight: normal;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      caption,
+      th {
+        text-align: left;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 100%;
+        font-weight: normal;
+      }
+      q:before,
+      q:after {
+        content: ;
+      }
+      abbr,
+      acronym {
+        border: 0;
+      }
+      body {
+        padding: 100px;
+      }
+
+      .J_ZoomMain {
+        width: 395px;
+        height: 460px;
+        float: left;
+        position: relative;
+      }
+      .J_ZoomMain .zoom {
+        height: 393px;
+        width: 393px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #dcdddd;
+      }
+      .J_ZoomMain .zoom img {
+        display: block;
+      }
+      .J_ZoomMain .zoom .move {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        background:/*#CF9*/ url(s.gif) repeat left top;
+        cursor: crosshair;
+        opacity: 0.5;
+        filter: Alpha(Opacity=50);
+      }
+      .J_ZoomMain .zoomDetail {
+        visibility: hidden;
+        border: 1px solid #dcdddd;
+        width: 393px;
+        height: 250px;
+        position: absolute;
+        right: -405px;
+        top: 0px;
+        overflow: hidden;
+      }
+      .J_ZoomMain .zoomDetail img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .littleImg {
+        margin-top: 10px;
+        height: 54px;
+        overflow: hidden;
+        position: relative;
+      }
+      .littleImg span {
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 55px;
+        background: #999;
+        cursor: pointer;
+      }
+      .littleImg span em {
+        display: none;
+        width: 10px;
+        height: 55px;
+      }
+      .littleImg span.btnL {
+        left: 0;
+        background: url(arrow.jpg) no-repeat left top;
+      }
+      .littleImg span.btnL em {
+        background: url(arrow.jpg) no-repeat left -57px;
+      }
+      .littleImg span.btnR em {
+        background: url(arrow.jpg) no-repeat -10px -57px;
+      }
+      .littleImg span.btnR {
+        right: 0;
+        background: url(arrow.jpg) no-repeat -10px top;
+      }
+      .littleImg span.hover em {
+        display: block;
+      }
+      .littleImg .slideMain {
+        width: 343px;
+        height: 53px;
+        margin-left: 26px;
+        overflow: hidden;
+        position: relative;
+      }
+      .littleImg .slideMain ul {
+        position: absolute;
+        left: 0;
+        width: 355px;
+        padding-top: 1px;
+      }
+      .littleImg .slideMain ul li {
+        float: left;
+        margin-right: 6px;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #dbdbdb;
+      }
+      .littleImg .slideMain ul li.selected {
+        border-color: #f60;
+      }
+      .littleImg .slideMain ul li img {
+        float: left;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body style="height:1000px;">
+    <!--�Ŵ�-->
+    <div class="J_ZoomMain">
+      <div class="J_ZoomHook zoom">
+        <span class="J_Slider move"></span>
+        <img
+          class="J_ImagesHook"
+          width="393"
+          height="393"
+          src="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+        />
+      </div>
+      <div class="littleImg">
+        <span class="btnL"><em>&lt;</em></span>
+        <span class="btnR"><em>&gt;</em></span>
+        <div class="J_SlideWrap slideMain">
+          <ul class="J_ImagesView">
+            <li class="selected">
+              <img
+                width="50"
+                height="50"
+                src="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+                medium-img="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+                large-img="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="http://a.hiphotos.baidu.com/image/w%3D2048/sign=c9ff9aa7ab014c08193b2fa53e430308/d6ca7bcb0a46f21f9ed2495df4246b600d33aedd.jpg"
+                medium-img="http://a.hiphotos.baidu.com/image/w%3D2048/sign=c9ff9aa7ab014c08193b2fa53e430308/d6ca7bcb0a46f21f9ed2495df4246b600d33aedd.jpg"
+                large-img="http://a.hiphotos.baidu.com/image/w%3D2048/sign=c9ff9aa7ab014c08193b2fa53e430308/d6ca7bcb0a46f21f9ed2495df4246b600d33aedd.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="http://d.hiphotos.baidu.com/image/w%3D2048/sign=64471fecb68f8c54e3d3c22f0e112df5/314e251f95cad1c86c9025257d3e6709c93d518d.jpg"
+                medium-img="http://d.hiphotos.baidu.com/image/w%3D2048/sign=64471fecb68f8c54e3d3c22f0e112df5/314e251f95cad1c86c9025257d3e6709c93d518d.jpg"
+                large-img="http://d.hiphotos.baidu.com/image/w%3D2048/sign=64471fecb68f8c54e3d3c22f0e112df5/314e251f95cad1c86c9025257d3e6709c93d518d.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="vf.jpg"
+                medium-img="vf.jpg"
+                large-img="vf.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="e.jpg"
+                medium-img="e.jpg"
+                large-img="e.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="vf.jpg"
+                medium-img="vf.jpg"
+                large-img="vf.jpg"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="J_ZoomDetail zoomDetail">
+        <img
+          class="J_ZoomDetailImage"
+          src="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+        />
+      </div>
+    </div>
+    <!--�Ŵ�end-->
+    <div style="clear:both; padding:20px;"></div>
+    <!--�Ŵ�-->
+    <div class="J_ZoomMain">
+      <div class="J_ZoomHook zoom">
+        <span class="J_Slider move"></span>
+        <img
+          class="J_ImagesHook"
+          width="393"
+          height="393"
+          src="1347000569971.jpg"
+        />
+      </div>
+      <div class="littleImg">
+        <span class="btnL"><em></em></span> <span class="btnR"><em></em></span>
+        <div class="J_SlideWrap slideMain">
+          <ul class="J_ImagesView">
+            <li class="selected">
+              <img
+                width="50"
+                height="50"
+                src="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+                medium-img="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+                large-img="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="1-130130221037.jpg"
+                medium-img="1-130130221037.jpg"
+                large-img="http://h.hiphotos.baidu.com/album/w%3D2048/sign=c8857aa19a504fc2a25fb705d1e5e611/d058ccbf6c81800afe737fa7b03533fa838b4781.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="fbb.jpg"
+                medium-img="fbb.jpg"
+                large-img="http://b.hiphotos.baidu.com/album/w%3D2048/sign=000dfd3dd62a60595210e61a1c0c359b/caef76094b36acaf7fdf87087dd98d1001e99c02.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="vf.jpg"
+                medium-img="vf.jpg"
+                large-img="vf.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="e.jpg"
+                medium-img="e.jpg"
+                large-img="e.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="vf.jpg"
+                medium-img="vf.jpg"
+                large-img="vf.jpg"
+              />
+            </li>
+            <li>
+              <img
+                width="50"
+                height="50"
+                src="vf.jpg"
+                medium-img="vf.jpg"
+                large-img="vf.jpg"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="J_ZoomDetail zoomDetail"
+        style="width:100px;height:100px; right:-105px;"
+      >
+        <img
+          class="J_ZoomDetailImage"
+          src="http://b.hiphotos.baidu.com/image/w%3D2048/sign=72649c6b0db30f24359aeb03fcadd043/b151f8198618367ad35948d72c738bd4b21ce5e3.jpg"
+        />
+      </div>
+    </div>
+    <!--�Ŵ�end-->
+    <script type="text/javascript">
+      //�����Ŵ�
+      $(function() {
+        JPZZoom.init($('.J_ZoomMain'));
+      });
+    </script>
+  </body>
+</html>

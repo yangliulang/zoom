@@ -1,0 +1,20 @@
+
+.J_ZoomMain {width:395px;height:460px;float:left;position:relative;}
+.J_ZoomMain .zoom {height:393px;width:393px; overflow:hidden;position:relative;border: 1px solid #dcdddd;}
+.J_ZoomMain .zoom img{display:block;}
+.J_ZoomMain .zoom .move{position:absolute;left:0; top:0;display:none; background:#CF9; cursor: crosshair;/*background: url(s.gif) repeat left top;*/opacity:0.5;filter:Alpha(Opacity=50);}
+.J_ZoomMain .zoomDetail{ visibility:hidden;border:1px solid #DCDDDD;width:393px; height:250px; position:absolute;right:-405px;top:0px; overflow:hidden;}
+.J_ZoomMain .zoomDetail img{ position:absolute; left:0; top:0;}
+.littleImg {margin-top:10px;height:54px;overflow:hidden;position:relative;}
+.littleImg span {position: absolute;display:block;width:10px;height:55px;background:#999;cursor:pointer;}
+.littleImg span em {display: none;width:10px;height:55px;}
+.littleImg span.btnL {left:0;background: url(UltimatePageCssPos.gif) no-repeat left top;}
+.littleImg span.btnL em {background: url(UltimatePageCssPos.gif) no-repeat left -57px;}
+.littleImg span.btnR em {background: url(UltimatePageCssPos.gif) no-repeat -10px -57px;}
+.littleImg span.btnR {right:0;background: url(UltimatePageCssPos.gif) no-repeat -10px top;}
+.littleImg span.hover em {display:block;}
+.littleImg .slideMain {width:343px;height:53px;margin-left:26px;overflow:hidden;position:relative;}
+.littleImg .slideMain ul {position:absolute;left:0;width:355px;padding-top:1px;}
+.littleImg .slideMain ul li {float:left;margin-right:6px;cursor:pointer;width:50px;height:50px;border:1px solid #dbdbdb;}
+.littleImg .slideMain ul li.selected {border-color:#f60;}
+.littleImg .slideMain ul li img {float:left;width:50px;height:50px;}
